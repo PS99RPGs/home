@@ -341,25 +341,115 @@
         }
         
         @media (max-width: 768px) {
+            header {
+                padding: 4rem 1rem;
+            }
+            
             h1 {
-                font-size: 3.5rem;
+                font-size: 3rem;
             }
             
             h2 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .logo-container {
-                width: 180px;
-                height: 180px;
+                width: 150px;
+                height: 150px;
+            }
+            
+            main {
+                padding: 2rem 1rem;
             }
             
             .section-container {
-                padding: 2.5rem;
+                padding: 2rem;
+                margin-bottom: 3rem;
+            }
+            
+            .item {
+                padding: 1.2rem 1.5rem 1.2rem 3rem;
+            }
+            
+            .item::before {
+                left: 1rem;
+                top: 1.2rem;
             }
             
             .btn {
                 width: 100%;
+                font-size: 1.1rem;
+                padding: 1.2rem;
+            }
+            
+            .modal-content {
+                padding: 2rem;
+                width: 95%;
+            }
+            
+            .close {
+                top: 10px;
+                right: 15px;
+                font-size: 28px;
+            }
+            
+            .trade-rules {
+                padding: 1.5rem;
+                margin-top: 2rem;
+            }
+            
+            .trade-rules h3 {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .tutorial {
+                padding: 1.5rem;
+            }
+            
+            .tutorial h3 {
+                font-size: 1.6rem;
+            }
+            
+            .tutorial ol {
+                margin-left: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .logo-container {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .section-container {
+                padding: 1.5rem;
+            }
+            
+            .item {
+                padding: 1rem 1.2rem 1rem 2.5rem;
+            }
+            
+            .item::before {
+                left: 0.8rem;
+                top: 1rem;
+            }
+            
+            .trade-rules {
+                padding: 1.2rem;
+            }
+            
+            .trade-rules h3,
+            .tutorial h3 {
+                font-size: 1.5rem;
             }
         }
     </style>
