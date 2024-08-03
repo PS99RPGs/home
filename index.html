@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>寵物模擬器99RPGs公會網站</title>
     <style>
-        @import url('https://i.postimg.cc/g2hVJQTK/latest.png');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Poppins:wght@600&display=swap');
         
         :root {
             --bg-color: #0a0a0a;
@@ -33,15 +33,15 @@
         header {
             background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
             text-align: center;
-            padding: 4rem 1rem;
+            padding: 6rem 1rem;
             position: relative;
             overflow: hidden;
         }
         
         .logo-container {
             position: relative;
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             margin: 0 auto 2rem;
         }
         
@@ -61,7 +61,7 @@
         
         h1 {
             font-family: 'Poppins', sans-serif;
-            font-size: 4rem;
+            font-size: 4.5rem;
             margin-bottom: 0.5rem;
             color: var(--bg-color);
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -69,16 +69,16 @@
         }
         
         main {
-            padding: 3rem 1rem;
+            padding: 4rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
         
         .section-container {
             background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 2.5rem;
-            margin-bottom: 3rem;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 4rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
@@ -108,8 +108,8 @@
         
         h2 {
             font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+            font-size: 2.8rem;
+            margin-bottom: 2.5rem;
             color: var(--accent-color);
             text-align: center;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
@@ -137,9 +137,9 @@
         
         .item {
             background-color: rgba(255, 255, 255, 0.03);
-            margin-bottom: 1.5rem;
-            padding: 1.2rem 1.5rem 1.2rem 3rem;
-            border-radius: 8px;
+            margin-bottom: 1.8rem;
+            padding: 1.5rem 1.8rem 1.5rem 3.5rem;
+            border-radius: 12px;
             position: relative;
             opacity: 0;
             transform: translateY(20px);
@@ -155,8 +155,8 @@
         .item::before {
             content: '🔹';
             position: absolute;
-            left: 1rem;
-            top: 1.2rem;
+            left: 1.2rem;
+            top: 1.5rem;
             color: var(--secondary-color);
             transition: transform 0.3s ease;
         }
@@ -174,15 +174,15 @@
         
         .btn {
             display: block;
-            width: 280px;
-            margin: 3rem auto 0;
-            padding: 1.2rem;
+            width: 300px;
+            margin: 4rem auto 0;
+            padding: 1.4rem;
             background-color: var(--accent-color);
             color: var(--bg-color);
             text-decoration: none;
             text-align: center;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             border-radius: 50px;
             transition: all 0.3s ease;
             cursor: pointer;
@@ -234,11 +234,11 @@
         .modal-content {
             background-color: var(--bg-color);
             margin: 15% auto;
-            padding: 2.5rem;
+            padding: 3rem;
             border: 2px solid var(--accent-color);
             width: 90%;
             max-width: 600px;
-            border-radius: 15px;
+            border-radius: 20px;
             box-shadow: 0 5px 30px rgba(0,0,0,0.3);
             animation: slideIn 0.3s;
             position: relative;
@@ -257,9 +257,9 @@
         .close {
             color: var(--text-color);
             position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 28px;
+            top: 15px;
+            right: 25px;
+            font-size: 32px;
             font-weight: bold;
             transition: color 0.3s ease;
         }
@@ -274,15 +274,15 @@
         .trade-rules {
             background-color: rgba(78, 205, 196, 0.1);
             border-left: 4px solid var(--secondary-color);
-            padding: 1.5rem;
-            margin-top: 2rem;
-            border-radius: 0 8px 8px 0;
+            padding: 2rem;
+            margin-top: 2.5rem;
+            border-radius: 0 12px 12px 0;
         }
         
         .trade-rules h3 {
             color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-size: 2rem;
         }
         
         .trade-rules ul {
@@ -290,8 +290,8 @@
         }
         
         .trade-rules li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.8rem;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
             position: relative;
             transition: all 0.3s ease;
         }
@@ -311,23 +311,51 @@
         .trade-rules li:hover::before {
             transform: scale(1.2);
         }
+
+        .tutorial {
+            margin-top: 2rem;
+            background-color: rgba(78, 205, 196, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .tutorial h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .tutorial ol {
+            margin-left: 1.5rem;
+        }
+
+        .tutorial li {
+            margin-bottom: 1rem;
+        }
+
+        .tutorial img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
         
         @media (max-width: 768px) {
             h1 {
-                font-size: 3rem;
+                font-size: 3.5rem;
             }
             
             h2 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .logo-container {
-                width: 150px;
-                height: 150px;
+                width: 180px;
+                height: 180px;
             }
             
             .section-container {
-                padding: 2rem;
+                padding: 2.5rem;
             }
             
             .btn {
@@ -384,6 +412,20 @@
             <p>請私訊 Discord 用戶 erenlew5099 以獲取加入公會的進一步指示。</p>
             <p>Discord 用戶名: <strong>erenlew5099</strong></p>
             <button id="copyDiscordBtn" class="btn">複製 Discord 用戶名</button>
+
+            <div class="tutorial">
+                <h3>如何在 Discord 上私訊 erenlew5099</h3>
+                <ol>
+                    <li>打開 Discord 應用程式或網頁版。</li>
+                    <li>點擊上方的 "好友" 文字，選擇 "點擊上方的新增好友"。</li>
+                    <li>在搜尋欄中輸入 "erenlew5099"。</li>
+                    <li>從搜尋結果中選擇正確的用戶。</li>
+                    <li>傳送</li>
+                    <li>在訊息欄中輸入您的加入申請，例如：
+                       "您好，我想加入公會。我已閱讀並同意公會規則。"</li>
+                    <li>點擊發送按鈕或按下 Enter 鍵發送訊息。</li>
+                </ol>
+            </div>
         </div>
     </div>
 
