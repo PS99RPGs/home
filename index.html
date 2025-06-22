@@ -3,519 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>寵物模擬器99RPGs公會網站</title>
+    <title>RPGs Guild - 公會章程</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Poppins:wght@600&display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500&display=swap');
+
         :root {
-            --bg-color: #0a0a0a;
-            --text-color: #ffffff;
-            --accent-color: #ff6b35;
-            --secondary-color: #4ecdc4;
-            --tertiary-color: #ffc13b;
+            --bg-color: #fdfdfc;
+            --text-color: #3d3d3d;
+            --heading-color: #1a1a1a;
+            --accent-color: #bfa78a;
+            --line-color: #e0e0e0;
+            --timeline-progress: 0px;
         }
-        
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            line-height: 1.6;
+            line-height: 1.9;
             background-color: var(--bg-color);
             color: var(--text-color);
-            transition: background-color 0.3s ease;
             overflow-x: hidden;
         }
-        
-        header {
-            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+
+        .header {
             text-align: center;
-            padding: 6rem 1rem;
-            position: relative;
-            overflow: hidden;
+            padding: 6rem 2rem 4rem;
         }
-        
-        .logo-container {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 2rem;
+
+        .header h1 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            margin-bottom: 1rem;
         }
-        
-        .logo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-            animation: pulse 2s infinite alternate;
-        }
-        
-        @keyframes pulse {
-            from { transform: scale(1); box-shadow: 0 0 30px rgba(255, 255, 255, 0.3); }
-            to { transform: scale(1.05); box-shadow: 0 0 40px rgba(255, 255, 255, 0.5); }
-        }
-        
-        h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 4.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--bg-color);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        main {
-            padding: 4rem 2rem;
-            max-width: 1200px;
+
+        .header p {
+            font-size: 1.1rem;
+            max-width: 600px;
             margin: 0 auto;
+            color: #6c757d;
         }
-        
-        .section-container {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 3rem;
-            margin-bottom: 4rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        .timeline-container {
             position: relative;
-            overflow: hidden;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 0;
         }
         
-        .section-container::before {
+        .timeline-container::after {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .section-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-        }
-        
-        .section-container:hover::before {
-            opacity: 1;
-        }
-        
-        h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.8rem;
-            margin-bottom: 2.5rem;
-            color: var(--accent-color);
-            text-align: center;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-            position: relative;
-            display: inline-block;
+            width: 3px;
+            background-color: var(--line-color);
+            top: 0;
+            bottom: 0;
             left: 50%;
-            transform: translateX(-50%);
+            margin-left: -1.5px;
+            z-index: 1;
         }
         
-        h2::after {
+        .timeline-container::before {
             content: '';
             position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(to right, var(--accent-color), var(--secondary-color));
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
+            width: 3px;
+            background-color: var(--accent-color);
+            top: 0;
+            left: 50%;
+            margin-left: -1.5px;
+            z-index: 2;
+            height: var(--timeline-progress);
         }
-        
-        .section-container:hover h2::after {
-            transform: scaleX(1);
-        }
-        
-        .item {
-            background-color: rgba(255, 255, 255, 0.03);
-            margin-bottom: 1.8rem;
-            padding: 1.5rem 1.8rem 1.5rem 3.5rem;
-            border-radius: 12px;
+
+        .timeline-item {
+            padding: 10px 40px;
             position: relative;
+            background-color: inherit;
+            width: 50%;
             opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.5s forwards;
-            transition: all 0.3s ease;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        
-        .item:hover {
-            background-color: rgba(255, 255, 255, 0.07);
-            transform: translateX(5px);
+
+        .timeline-item.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-        
-        .item::before {
-            content: '🔹';
+
+        .timeline-item::after {
+            content: '';
             position: absolute;
-            left: 1.2rem;
-            top: 1.5rem;
-            color: var(--secondary-color);
-            transition: transform 0.3s ease;
+            width: 15px;
+            height: 15px;
+            background-color: var(--bg-color);
+            border: 3px solid var(--line-color);
+            top: 28px;
+            border-radius: 50%;
+            z-index: 3;
+            transition: all 0.4s ease;
         }
         
-        .item:hover::before {
-            transform: scale(1.2);
+        .timeline-item.is-visible::after {
+            border-color: var(--accent-color);
+            background-color: var(--accent-color);
         }
         
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .timeline-item.left {
+            left: 0;
+            padding-right: 80px;
+            text-align: right;
+        }
+        
+        .timeline-item.left::after {
+            right: 40px;
+        }
+        
+        .timeline-item.right {
+            left: 50%;
+            padding-left: 80px;
+        }
+
+        .timeline-item.right::after {
+            left: 40px;
+        }
+        
+        .timeline-item h2 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-item p, .timeline-item li {
+            font-size: 1rem;
+        }
+        
+        .timeline-item ul {
+            list-style: none;
+        }
+
+        .timeline-item ul li {
+            margin-top: 0.5rem;
+        }
+
+        .ender-container {
+            text-align: center;
+            padding: 4rem 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s;
+        }
+
+        .ender-container.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .btn {
-            display: block;
-            width: 300px;
-            margin: 4rem auto 0;
-            padding: 1.4rem;
+            display: inline-block;
+            padding: 1rem 3rem;
             background-color: var(--accent-color);
-            color: var(--bg-color);
+            color: var(--white-color);
             text-decoration: none;
-            text-align: center;
-            font-weight: bold;
-            font-size: 1.3rem;
+            font-weight: 500;
+            font-size: 1.2rem;
             border-radius: 50px;
             transition: all 0.3s ease;
-            cursor: pointer;
             border: none;
-            outline: none;
-            position: relative;
-            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                120deg,
-                transparent,
-                rgba(255, 255, 255, 0.3),
-                transparent
-            );
-            transition: all 0.6s;
-        }
-        
-        .btn:hover::before {
-            left: 100%;
-        }
-        
-        .btn:hover, .btn:focus {
-            background-color: var(--tertiary-color);
+
+        .btn:hover {
+            background-color: #a98f71;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
         
+        @media screen and (max-width: 768px) {
+            .timeline-container::after,
+            .timeline-container::before {
+                left: 20px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 15px;
+            }
+            .timeline-item.left, .timeline-item.right {
+                left: 0%;
+                text-align: left;
+                padding-left: 60px;
+                padding-right: 15px;
+            }
+            .timeline-item.left::after, .timeline-item.right::after {
+                left: 40px;
+            }
+        }
+
         .modal {
             display: none;
             position: fixed;
-            z-index: 1;
+            z-index: 1001;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.7);
-            animation: fadeIn 0.3s;
+            background-color: rgba(0,0,0,0.6);
         }
-        
+
         .modal-content {
+            text-align: center;
             background-color: var(--bg-color);
-            margin: 15% auto;
-            padding: 3rem;
-            border: 2px solid var(--accent-color);
+            margin: 20% auto;
+            padding: 2.5rem;
+            border-radius: 8px;
             width: 90%;
-            max-width: 600px;
-            border-radius: 20px;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
-            animation: slideIn 0.3s;
+            max-width: 450px;
             position: relative;
         }
-        
-        @keyframes fadeIn {
-            from {opacity: 0}
-            to {opacity: 1}
+
+        .modal-content h2 {
+            font-family: 'Noto Serif TC', serif;
         }
-        
-        @keyframes slideIn {
-            from {transform: translateY(-50px); opacity: 0;}
-            to {transform: translateY(0); opacity: 1;}
-        }
-        
+
         .close {
-            color: var(--text-color);
+            color: #aaa;
             position: absolute;
             top: 15px;
-            right: 25px;
-            font-size: 32px;
+            right: 20px;
+            font-size: 28px;
             font-weight: bold;
-            transition: color 0.3s ease;
-        }
-        
-        .close:hover,
-        .close:focus {
-            color: var(--accent-color);
-            text-decoration: none;
             cursor: pointer;
         }
-        
-        .trade-rules {
-            background-color: rgba(78, 205, 196, 0.1);
-            border-left: 4px solid var(--secondary-color);
-            padding: 2rem;
-            margin-top: 2.5rem;
-            border-radius: 0 12px 12px 0;
-        }
-        
-        .trade-rules h3 {
-            color: var(--secondary-color);
-            margin-bottom: 2rem;
-            font-size: 2rem;
-        }
-        
-        .trade-rules ul {
-            list-style-type: none;
-        }
-        
-        .trade-rules li {
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .trade-rules li:hover {
-            transform: translateX(5px);
-        }
-        
-        .trade-rules li::before {
-            content: '➤';
-            position: absolute;
-            left: 0;
-            color: var(--tertiary-color);
-            transition: transform 0.3s ease;
-        }
-        
-        .trade-rules li:hover::before {
-            transform: scale(1.2);
-        }
 
-        .tutorial {
-            margin-top: 2rem;
-            background-color: rgba(78, 205, 196, 0.1);
-            border-radius: 12px;
-            padding: 2rem;
-        }
-
-        .tutorial h3 {
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-        }
-
-        .tutorial ol {
-            margin-left: 1.5rem;
-        }
-
-        .tutorial li {
-            margin-bottom: 1rem;
-        }
-
-        .tutorial img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin: 1rem 0;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        @media (max-width: 768px) {
-            header {
-                padding: 4rem 1rem;
-            }
-            
-            h1 {
-                font-size: 3rem;
-            }
-            
-            h2 {
-                font-size: 2.2rem;
-            }
-            
-            .logo-container {
-                width: 150px;
-                height: 150px;
-            }
-            
-            main {
-                padding: 2rem 1rem;
-            }
-            
-            .section-container {
-                padding: 2rem;
-                margin-bottom: 3rem;
-            }
-            
-            .item {
-                padding: 1.2rem 1.5rem 1.2rem 3rem;
-            }
-            
-            .item::before {
-                left: 1rem;
-                top: 1.2rem;
-            }
-            
-            .btn {
-                width: 100%;
-                font-size: 1.1rem;
-                padding: 1.2rem;
-            }
-            
-            .modal-content {
-                padding: 2rem;
-                width: 95%;
-            }
-            
-            .close {
-                top: 10px;
-                right: 15px;
-                font-size: 28px;
-            }
-            
-            .trade-rules {
-                padding: 1.5rem;
-                margin-top: 2rem;
-            }
-            
-            .trade-rules h3 {
-                font-size: 1.8rem;
-                margin-bottom: 1.5rem;
-            }
-            
-            .tutorial {
-                padding: 1.5rem;
-            }
-            
-            .tutorial h3 {
-                font-size: 1.6rem;
-            }
-            
-            .tutorial ol {
-                margin-left: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            h2 {
-                font-size: 2rem;
-            }
-            
-            .logo-container {
-                width: 120px;
-                height: 120px;
-            }
-            
-            .section-container {
-                padding: 1.5rem;
-            }
-            
-            .item {
-                padding: 1rem 1.2rem 1rem 2.5rem;
-            }
-            
-            .item::before {
-                left: 0.8rem;
-                top: 1rem;
-            }
-            
-            .trade-rules {
-                padding: 1.2rem;
-            }
-            
-            .trade-rules h3,
-            .tutorial h3 {
-                font-size: 1.5rem;
-            }
+        .modal .btn {
+            display: block;
+            width: 100%;
+            margin-top: 1.5rem;
         }
     </style>
 </head>
 <body>
+
     <header class="header">
-        <div class="logo-container">
-            <img src="https://i.postimg.cc/g2hVJQTK/latest.png" alt="寵物模擬器99RPGs公會 Logo" class="logo">
-        </div>
-        <h1 class="title">寵物模擬器99RPGs公會</h1>
+        <h1>公會章程與行為準則</h1>
+        <p>為維護社群的卓越品質與和諧氛圍，請仔細閱讀以下條款。您的每次捲動，都代表著對我們共同價值的認同。</p>
     </header>
+
     <main>
-        <div class="section-container">
-            <h2>公會規則</h2>
-            <div class="item">公會戰結束後0星成員會直接請離，就算你有捐款，0星會一律視為退遊不玩。</div>
-            <div class="item">所有捐款都是直接進入公會裡，會長和副會長是完全無法拿到任何一個鑽石，都是用來升級和開起會員欄位用而已。</div>
-            <div class="item">我們拒絕伸手黨！拒絕吵架！拒絕騙子！各位相親相愛！恩恩愛愛！</div>
-            <div class="item">若有違規者，第一次將會送你一個新身份！第二次就直接請離！如果是騙子沒有機會！直接請離並且永久黑名單！</div>
-            
-            <div class="trade-rules">
-                <h3>交易區規則</h3>
+        <div class="timeline-container">
+            <div class="timeline-item left">
+                <h2>公平與尊重</h2>
+                <p>我們拒絕任何形式的爭吵、詐騙或伸手行為。所有成員應以禮相待，共同營造正向的交流環境。</p>
+            </div>
+            <div class="timeline-item right">
+                <h2>公會戰貢獻</h2>
+                <p>公會戰結束時，貢獻為 0 星的成員將被視為非活躍，並被請離公會，以此確保團隊的整體戰鬥力。</p>
+            </div>
+            <div class="timeline-item left">
+                <h2>資金透明化</h2>
+                <p>所有捐款 100% 用於公會發展，如升級或擴充成員欄位。資金流向公開，管理層絕不私用。</p>
+            </div>
+            <div class="timeline-item right">
+                <h2>基本門檻</h2>
+                <p>目前加入等級 (Rank) 需求為 15，並要求每週捐款 10M，以維持公會的健康運作。</p>
+            </div>
+            <div class="timeline-item left">
+                <h2>交易區規範</h2>
                 <ul>
-                    <li>買賣方式：貼上要賣或買的商品圖或文字說明，附上價格和買賣標籤。</li>
-                    <li>請耐心等待他人回覆訊息，若無法等待請到交易所交易。</li>
-                    <li>禁止劫鏢行為（搶先完成他人正在進行的交易）。</li>
-                    <li>建議使用遊戲內面交方式，以防被騙。</li>
-                    <li>競標時需附上商品圖、起標價、最低出價和結束時間。</li>
-                    <li>所有交易請以遊戲內貨幣或道具進行，特殊交易需獲得許可。</li>
-                    <li>違反規則者將被請離，不接受求情。</li>
-                    <li>請勿發布與交易無關的內容。</li>
+                    <li>- 格式清晰，嚴禁劫鏢</li>
+                    <li>- 耐心等候，安全面交</li>
+                    <li>- 違者請離，絕不寬貸</li>
                 </ul>
             </div>
         </div>
-        
-        <div class="section-container">
-            <h2>加入要求</h2>
-            <div class="item">公會目前加入需求最低Rank15。</div>
-            <div class="item">每週需要10M捐款，日後可能會適度提高捐款和Rank的要求。</div>
-            <div class="item">公會戰期間，會以公會戰星星做計算，例如本次公會戰結束前必須貢獻XX顆星星。</div>
-            <div class="item">不被請離很簡單，只要可以達到個人捐款要求，還有XX星星即可。</div>
-        </div>
-        
-        <button id="joinBtn" class="btn">同意規則並申請加入</button>
-    </main>
 
+        <div class="ender-container">
+            <button id="joinBtn" class="btn">我已詳閱並同意所有規則</button>
+        </div>
+    </main>
+    
     <div id="joinModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>如何加入公會</h2>
-            <p>請私訊 Discord 用戶 erenlew5099 以獲取加入公會的進一步指示。</p>
-            <p>Discord 用戶名: <strong>erenlew5099</strong></p>
-            <button id="copyDiscordBtn" class="btn">複製 Discord 用戶名</button>
-
-            <div class="tutorial">
-                <h3>如何在 Discord 上私訊 erenlew5099</h3>
-                <ol>
-                    <li>打開 Discord 應用程式或網頁版。</li>
-                    <li>點擊上方的 "好友" 文字，選擇 "點擊上方的新增好友"。</li>
-                    <li>在搜尋欄中輸入 "erenlew5099"。</li>
-                    <li>從搜尋結果中選擇正確的用戶。</li>
-                    <li>傳送</li>
-                    <li>在訊息欄中輸入您的加入申請，例如：
-                       "您好，我想加入公會。我已閱讀並同意公會規則。"</li>
-                    <li>點擊發送按鈕或按下 Enter 鍵發送訊息。</li>
-                </ol>
-            </div>
+            <h2>最後一步</h2>
+            <p>請透過 Discord 私訊管理員<br><strong>erenlew5099</strong><br>以完成申請。</p>
+            <button id="copyDiscordBtn" class="btn">複製 Discord ID</button>
         </div>
     </div>
 
@@ -525,28 +311,52 @@
         const span = document.getElementsByClassName("close")[0];
         const copyDiscordBtn = document.getElementById("copyDiscordBtn");
 
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+        btn.onclick = function() { modal.style.display = "block"; }
+        span.onclick = function() { modal.style.display = "none"; }
+        window.onclick = function(event) { if (event.target == modal) { modal.style.display = "none"; } }
 
         copyDiscordBtn.onclick = function() {
-            const discordUsername = "erenlew5099";
-            navigator.clipboard.writeText(discordUsername).then(function() {
-                alert("Discord 用戶名已複製到剪貼簿!");
-            }, function() {
-                alert("無法複製 Discord 用戶名。請手動複製: erenlew5099");
+            navigator.clipboard.writeText("erenlew5099").then(() => {
+                const originalText = copyDiscordBtn.textContent;
+                copyDiscordBtn.textContent = "已複製！";
+                copyDiscordBtn.style.backgroundColor = '#28a745';
+                setTimeout(() => {
+                    copyDiscordBtn.textContent = originalText;
+                    copyDiscordBtn.style.backgroundColor = 'var(--accent-color)';
+                }, 2000);
             });
         }
+        
+        const observerItems = document.querySelectorAll('.timeline-item, .ender-container');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        observerItems.forEach(item => { observer.observe(item); });
+
+        const timelineContainer = document.querySelector('.timeline-container');
+        const root = document.documentElement;
+
+        function handleTimelineUpdate() {
+            if (!timelineContainer) return;
+            
+            const containerRect = timelineContainer.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+
+            let progress = (viewportHeight - containerRect.top) / (viewportHeight + containerRect.height);
+            
+            progress = Math.min(1, Math.max(0, progress));
+
+            const progressHeight = progress * containerRect.height;
+            root.style.setProperty('--timeline-progress', `${progressHeight}px`);
+        }
+
+        window.addEventListener('scroll', handleTimelineUpdate);
+        window.addEventListener('resize', handleTimelineUpdate);
+        handleTimelineUpdate();
     </script>
 </body>
 </html>
